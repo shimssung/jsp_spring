@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.demo.board.dao.BoardMapper" >
+
+
+    <!-- listRow --> 
+
+    <select id="listRow"
+            resultType = "BoardResponseDTO">
+        SELECT BNO, TITLE, CONTENT, REGDATE, VIEWCNT, WRITER
+        FROM   project_board_tbl
+
+    </select>    
+
+    <!-- myHistoryRow --> 
+
+    <select id="myHistoryRow"
+            parameterType = "java.lang.String"
+            resultType = "UserBoardResponseDTO">
+        SELECT u.id, b.bno, b.title, b.content, b.regdate, b.viewcnt, b.writer
+        FROM   project_user_tbl  u
+        JOIN   project_board_tbl b ON(u.id = b.writer) 
+        WHERE  id = #{id}; 
+
+    </select>
+    
+    </mapper>

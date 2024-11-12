@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0/EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration>
+    <typeAliases>
+        <!-- user -->
+        <typeAlias alias="userRequestDTO" type="com.example.demo.user.domain.UserRequestDTO" />
+        <typeAlias alias="userResponseDTO"  type="com.example.demo.user.domain.UserResponseDTO" />
+
+        <!-- board -->
+        <typeAlias alias="BoardResponseDTO"  type="com.example.demo.board.domain.BoardResponseDTO" />
+
+        <!-- UserBoardResponseDTO -->
+        <typeAlias alias="UserBoardResponseDTO"  type="com.example.demo.board.domain.UserBoardResponseDTO" />
+    </typeAliases>
+</configuration>
